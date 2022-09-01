@@ -24,5 +24,17 @@
     <ClCompile Include="순열_by_재귀함수.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="조합 재귀.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="알고리즘 교안.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="조합_중첩_For.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1주차. 복잡도, 재귀함수, 누적합, 구현.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
