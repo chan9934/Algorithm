@@ -5,6 +5,11 @@
 #include <tuple>
 #include <algorithm>
 #include <cstring>
+#include <map>
+#include <unordered_map>
+#include <set>
+#include <stack>
+#include<queue>
 
 using namespace std;
 //int ret = 1;
@@ -742,19 +747,589 @@ using namespace std;
 //
 //fill(&arr[0][0], &arr[0][0] + n * m k)
 //memcpy
-int a[5];
-int temp[5];
+//int a[5];
+//int temp[5];
+//
+//int main()
+//{
+//	for (int i = 0; i < 5; ++i)
+//	{
+//		a[i] = i;
+//	}
+//
+//	memcpy(temp, a, sizeof(a));
+//
+//	for (int i : temp)
+//		cout << i << " ";
+//	return 0;
+//}
+//const int mxy = 3;
+//const int mxx = 4;
+//
+//int a[mxy][mxx];
+//
+//int main()
+//{
+//	for (int i = 0; i < mxy; ++i)
+//	{
+//		for (int j = 0; j < mxx; ++j)
+//		{
+//			a[i][j] = (i + j);
+//		}
+//	}
+//
+//	//good
+//	for (int i = 0; i < mxy; ++i)
+//	{
+//		for (int j = 0; j < mxx; ++j)
+//		{
+//			cout << a[i][j] << ' ';
+//		}
+//		cout << '\n';
+//	}
+//
+//	//bad
+//	for (int i = 0; i < mxx; ++i)
+//	{
+//		for (int j = 0; j < mxy; ++j)
+//		{
+//			cout << a[j][i] << ' ';
+//		}
+//		cout << '\n';
+//	}
+//	return 0;
+//}
+//int v[10];
+//
+//int main()
+//{
+//	unordered_map<string, int> umap;
+//
+//	umap.insert({ "test1", 1 });
+//	
+//	umap.emplace("test5", 5);
+//	
+//	umap["test1"] = 4;
+//
+//	for (auto element : umap)
+//	{
+//		cout << element.first << "::" << element.second << "n";
+//	}
+//
+//	auto search = umap.find("test4");
+//
+//	if (search != umap.end())
+//	{
+//		cout << "found :" << search->first << " " << (*search).second << "\n";
+//	}
+//	else
+//	{
+//		cout << "not found.." << "\n";
+//	}
+//
+//	umap["test1"]++;
+//
+//	cout << umap["test1"] << "\n";
+//
+//	cout << umap.size() << "\n";
+//
+//	umap.erase("test1");
+//
+//	cout << umap.size() << "\n";
+//
+//	return 0;
+//
+//}
+//
+//using namespace std;
+//
+//int main()
+//{
+//	map<string, int> _map;
+//
+//	_map["큰돌"]++;
+//	_map["큰돌"]++;
+//
+//	for (auto c : _map)
+//	{
+//		cout << c.first << " : " << c.second << "\n";
+//	}
+//	return 0;
+//
+//}
+//map<int, int> mp;
+//map<string, string> mp2;
+//
+//int main()
+//{
+//	cout << mp[1] << "\n";
+//	cout << mp2["aaa"] << "\n";
+//
+//	for (auto i : mp)
+//	{
+//		cout << i.first << " " << i.second;
+//	}
+//
+//	cout << "\n";
+//	for (auto i : mp2)
+//	{
+//		cout << i.first << " " << i.second;
+//	}
+//
+//	return 0;
+//}
+//map<int, int> mp;
+//map<string, string> mp2;
+//
+//int main()
+//{
+//	if (mp[1] == 0)
+//	{
+//		mp[1] = 2;
+//	}
+//
+//	for (auto i : mp)
+//	{
+//		cout << i.first << " " << i.second;
+//	}
+//
+//	return 0;
+//}
+// 정렬이 됨 레드 블랙트리 기반 탐색 삽입 삭제에 log N 걸림
+//
+//int main()
+//{
+//	set<pair<string, int >> st;
+//	st.insert({ "test", 1 });
+//	st.insert({ "test", 1 });
+//	st.insert({ "test", 1 });
+//	st.insert({ "test", 1 });
+//
+//	cout << st.size() << "\n";
+//
+//	set<int> st2;
+//	st2.insert(1);
+//	st2.insert(2);
+//	st2.insert(2);
+//	for (auto it : st2)
+//	{
+//		cout << it << "\n";
+//	}
+//}
+//int main()
+//{
+//	set<pair<string, int>> _set;
+//	_set.insert({ "test", 1 });
+//	_set.insert({ "test", 1 });
+//	_set.insert({ "test", 1 });
+//	_set.insert({ "test", 1 });
+//	cout << _set.size() << "\n";
+//	return 0;
+//}
+//multiset<int> s;
+//
+//int main()
+//{
+//	s.insert(12);
+//	s.insert(10);
+//	s.insert(2);
+//	s.insert(10);
+//	s.insert(90);
+//	s.insert(85);
+//	s.insert(45);
+//
+//	cout << "Multiset elements after sort\n";
+//
+//	for (auto it = s.begin(); it != s.end(); ++it)
+//	{
+//		cout << *it << ' ';
+//	}
+//	cout << "\n";
+//
+//	auto it1 = s.find(10);
+//	auto it2 = s.find(90);
+//
+//	s.erase(it1, it2);
+//
+//	cout << "Multiset Elements After erase:\n";
+//	for (auto it = s.begin(); it != s.end(); ++it)
+//	{
+//		cout << *it << ' ';
+//	}
+//
+//	s.erase(s.begin());
+//
+//	cout << "\n";
+//
+//	for (auto it = s.begin(); it != s.end(); ++it)
+//	{
+//		cout << (*it) << ' ';
+//	}
+//	return 0;
+//
+//}
+//
+//stack<string>stk;
+//
+//int main()
+//{
+//	stk.push("엄");
+//	stk.push("준");
+//	stk.push("식");
+//	stk.push("화");
+//	stk.push("이");
+//	stk.push("팅");
+//
+//	while (stk.size())
+//	{
+//		cout << stk.top() << "\n";
+//		stk.pop();
+//	}
+//}
+//int main()
+//{
+//	queue<int> q;
+//	q.push(1);
+//	cout << q.front() << "\n";
+//
+//	q.pop();
+//
+//	cout << q.size() << "\n";
+//
+//	return 0;
+//}
+//int main()
+//{
+//	queue<int> q;
+//
+//	for (int i = 1; i <= 10; ++i)
+//	{
+//		q.push(i);
+//	}
+//
+//	while (q.size())
+//	{
+//		cout << q.front() << ' ';
+//		q.pop();
+//	}
+//	return 0;
+//}
+//int main()
+//{
+//	deque<int> dq;
+//	dq.push_front(1);
+//	dq.push_back(2);
+//	dq.push_back(3);
+//
+//	cout << dq.front() << "\n";
+//	cout << dq.back() << "\n";
+//	cout << dq.size() << "\n";
+//
+//	dq.pop_back();
+//	dq.pop_front();
+//
+//	cout << dq.size() << "\n";
+//
+//	return 0;
+//}
+//struct Point
+//{
+//	int x, y;
+//	Point(int y, int x) : y(y), x(x)
+//	{
+//	}
+//	Point()
+//	{
+//		y = -1;
+//		x = -1;
+//	}
+//
+//	bool operator < (const Point& a) const
+//	{
+//		if (x == a.x)
+//		{
+//			return y < a.y;
+//		}
+//		
+//		return x < a.x;
+//
+//
+//	}
+//};
+//struct Point
+//{
+//	int y, x;
+//
+//	Point(int y, int x)
+//		: y(y)
+//		, x(x)
+//	{
+//	}
+//
+//	Point()
+//	{
+//		y = -1;
+//		x = -1;
+//	}
+//
+//	bool operator < (const Point& a) const
+//	{
+//		if (x == a.x)
+//		{
+//			return y < a.y;
+//		}
+//
+//		return x < a.x;
+//	}
+//};
+//
+//struct percent
+//{
+//	int x, y;
+//	double w, d, l;
+//} a[6];
+//
+//struct Point
+//{
+//	int y, x;
+//
+//	Point(int y, int x)
+//		: y(y)
+//		, x(x)
+//	{
+//	}
+//
+//	Point()
+//	{
+//		y = -1;
+//		x = -1;
+//	}
+//
+//	bool operator < (const Point& a)const
+//	{
+//		if (x == a.x)
+//		{
+//			return y < a.y;
+//		}
+//
+//		else
+//		{
+//			return x < a.x;
+//		}
+//	}
+//};
+//
+//vector<Point>v;
+//int main()
+//{
+//	for (int i = 10; i >= 1; --i)
+//	{
+//		Point a = { i, i };
+//		v.push_back(a);
+//	}
+//
+//	sort(v.begin(), v.end());
+//	for (auto it : v)
+//	{
+//		cout << it.y <<  " : " << it.x << "\n";
+//		
+//	}
+//	return 0;
+//}
+//struct Point
+//{
+//	int x, y, z;
+//
+//	Point(int y, int x, int z)
+//		: y(y)
+//		, x(x)
+//		, z(z)
+//	{
+//	}
+//
+//	Point()
+//	{
+//		y = -1;
+//		x = -1;
+//		z = -1;
+//	}
+//
+//	bool operator < (const Point& a)const
+//	{
+//		if (x == a.x)
+//		{
+//			if (y == a.y)
+//			{
+//				return z < a.z;
+//			}
+//			return y > a.y;
+//		}
+//		return x < a.x;
+//	}
+//};
+//struct Point
+//{
+//	int y, x;
+//};
+//
+//bool cmp(const Point& a, const Point& b)
+//{
+//	return a.x > b.x;
+//}
+//
+//vector<Point>v;
+//
+//int main()
+//{
+//	for (int i = 10; i >= 1; --i)
+//	{
+//		v.push_back({ i, 10 - i });
+//	}
+//
+//sort(v.begin(), v.end(), cmp);
+//
+//for (auto it : v)
+//{
+//	cout << it.y << ":" << it.x << "\n";
+//}
+//return 0;
+//
+//}
+//priority_queue<int, vector<int>, greater<int>>pq;
+//priority_queue<int, vector<int>, less<int>>pq2;
+//
+//int main()
+//{
+//	pq.push(5);
+//	pq.push(4);
+//	pq.push(3);
+//	pq.push(2);
+//	pq.push(1);
+//
+//	cout << pq.top() << "\n";
+//
+//	return 0;
+//}
+//struct Point
+//{
+//	int y, x;
+//	Point(int y, int x)
+//		: y(y)
+//		, x(x)
+//	{
+//	}
+//
+//	Point()
+//	{
+//		y = -1;
+//		x = -1;
+//	}
+//	bool operator < (const Point& a) const
+//	{
+//		return x < a.x;
+//	}
+//};
+//
+//priority_queue<Point> pq;
+//
+//int main()
+//{
+//	pq.push({ 1, 1 });
+//	pq.push({ 2, 2 });
+//	pq.push({ 3, 3 });
+//	pq.push({ 4, 4 });
+//	pq.push({ 5, 5 });
+//	pq.push({ 6, 6 });
+//
+//	cout << pq.top().x << "\n";
+//
+//	return 0;
+//}
+//struct Point
+//{
+//	int y, x;
+//};
+//
+//struct cmp
+//{
+//	bool operator ()(Point a, Point b)
+//	{
+//		return a.x < b.x;
+//	}
+//};
+//
+////bool cmp(Point a, Point b)
+////{
+////	return a.x < b
+////}
+//
+//priority_queue<Point, vector<Point>, cmp> pq;
+//
+//int main()
+//{
+//	pq.push({ 1, 1 });
+//	pq.push({ 2, 2 });
+//	pq.push({ 3, 3 });
+//	pq.push({ 4, 4 });
+//	pq.push({ 5, 5 });
+//	pq.push({ 6, 6 });
+//
+//	cout << pq.top().x << "\n";
+//
+//	return 0;
+//}
+//
+//int main()
+//{
+//	string a = "abcda";
+//	string* b = &a;
+//
+//	cout << b << "\n";
+//	cout << *b << "\n";
+//
+//	return 0;
+//}
 
+int v[10];
 int main()
 {
-	for (int i = 0; i < 5; ++i)
+	unordered_map<string, int> umap;
+
+	umap.insert({ "test1", 1 });
+
+	umap.emplace("test5", 5 );
+
+	umap["test1"] = 4;
+
+	for (auto it : umap)
 	{
-		a[i] = i;
+		cout << it.first << "::" << it.second << "\n";
 	}
 
-	memcpy(temp, a, sizeof(a));
+	auto search = umap.find("test4");
 
-	for (int i : temp)
-		cout << i << " ";
+	if (search != umap.end())
+	{
+		cout << "found : " << search->first << " " << (*search).second << "\n";
+	}
+
+	else
+	{
+		cout << "not found.." << "\n";
+	}
+
+	umap["test1"]++;
+
+	cout << umap["test1"] << "\n";
+
+	cout << umap.size() << "\n";
+
+	umap.erase("test1");
+
+	cout << umap.size() << "\n";
+
 	return 0;
+
+	
+
 }
