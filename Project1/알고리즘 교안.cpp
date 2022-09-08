@@ -1289,47 +1289,303 @@ using namespace std;
 //
 //	return 0;
 //}
+//
+//int v[10];
+//int main()
+//{
+//	unordered_map<string, int> umap;
+//
+//	umap.insert({ "test1", 1 });
+//
+//	umap.emplace("test5", 5 );
+//
+//	umap["test1"] = 4;
+//
+//	for (auto it : umap)
+//	{
+//		cout << it.first << "::" << it.second << "\n";
+//	}
+//
+//	auto search = umap.find("test4");
+//
+//	if (search != umap.end())
+//	{
+//		cout << "found : " << search->first << " " << (*search).second << "\n";
+//	}
+//
+//	else
+//	{
+//		cout << "not found.." << "\n";
+//	}
+//
+//	umap["test1"]++;
+//
+//	cout << umap["test1"] << "\n";
+//
+//	cout << umap.size() << "\n";
+//
+//	umap.erase("test1");
+//
+//	cout << umap.size() << "\n";
+//
+//	return 0;
+//
+//	
+//
+//}
+//vector<int> v;
+//
+//int main()
+//{
+//	for (int i = 1; i <= 5; ++i)
+//	{
+//		v.push_back(i);
+//	}
+//
+//	for (int i = 0; i < 5; ++i)
+//	{
+//		cout << i << "번째 요소 : " << *(v.begin() + i) << "\n";
+//		cout <<&*(v.begin() + i) << "\n";
+//
+//	}
+//}
+//int idx = 2;
+//
+//void go(int& idx)
+//{
+//	idx = 1;
+//}
+//
+//void go2(int idx)
+//{
+//	idx = 100;
+//}
+//
+//int main()
+//{
+//	go(idx);
+//	cout << idx << "\n";
+//	go2(idx);
+//	cout << idx << "\n";
+//}
+//void go(int a[])
+//{
+//	a[2] = 100;
+//}
+//
+//int main()
+//{
+//	int a[3] = { 1, 2, 3 };
+//
+//	go(a);
+//	for (int i : a)
+//	{
+//		cout << i << "\n";
+//	}
+//}
+//void printV(vector<int>& v)
+//{
+//	for (int i : v)
+//	{
+//		cout << i << " ";
+//	}
+//	
+//	cout << "\n";
+//}
+//
+//int main()
+//{
+//	int a[3] = { 1, 2, 3 };
+//
+//	vector<int> v;
+//	for (int i = 0; i < 3; ++i)
+//	{
+//		v.push_back(a[i]);
+//	}
+//
+//	do 
+//	{
+//		printV(v);
+//	} while (next_permutation(v.begin(), v.end()));
+//
+//	cout << "----------------------" << "\n";
+//
+//	v.clear();
+//	for (int i = 2; i >= 0; --i)
+//	{
+//		v.push_back((a[i]));
+//	}
+//
+//	do 
+//	{
+//		printV(v);
+//	} while (prev_permutation(v.begin(), v.end()));
+//}
+//int a[3] = { 1, 2, 3 };
+//
+//vector<int> v;
+//
+//void printV(vector<int> v)
+//{
+//	for (int i = 0; i < v.size(); ++i)
+//	{
+//		cout << v[i] << " ";
+//	}
+//
+//	cout << "\n";
+//}
+//
+//void makePermutation(int n, int r, int depth)
+//{
+//	if (r == depth)
+//	{
+//		printV(v);
+//		return;
+//	}
+//
+//	for (int i = depth; i < n; ++i)
+//	{
+//		swap(v[i], v[depth]);
+//		makePermutation(n, r, depth + i);
+//		swap(v[i], v[depth]);
+//	}
+//
+//	return;
+//}
+//
+//int main()
+//{
+//	for (int i = 0; i < 3; ++i)
+//	{
+//		v.push_back(a[i]);
+//		makePermutation(3, 3, 0);
+//		return 0;
+//	}
+//}
+//int n = 5, k = 3, a[5] = { 1, 2, 3, 4, 5 };
+//
+//void print(vector<int> b)
+//{
+//	for (int i : b)
+//	{
+//		cout << i << " ";
+//	}
+//		cout << "\n";
+//	
+//}
+//
+//void combi(int start, vector<int> b)
+//{
+//	if (b.size() == k)
+//	{
+//		print(b);
+//		return;
+//	}
+//
+//	for (int i = start; i < n; ++i)
+//	{
+//		b.push_back(i);
+//		combi(i, b);
+//		b.pop_back();
+//	}
+//	return;
+//}
+//int main()
+//{
+//	vector<int> b;
+//	combi(0, b);
+//	return 0;
+//}
+//int n = 5;
+//int r = 3;
+//int a[5] = { 1, 2, 3, 4, 5 };
+//void printV(vector<int> v)
+//{
+//	for (int i : v)
+//	{
+//		cout << i << " ";
+//	}
+//	cout << "\n";
+//}
+//
+//void combi(int Start, vector<int> v)
+//{
+//	if (v.size() == r)
+//	{
+//		printV(v);
+//		return;
+//	}
+//
+//	for (int i = Start + 1; i < n; ++i)
+//	{
+//		v.push_back(i);
+//		combi(i, v);
+//		v.pop_back();
+//	}
+//}
+//
+//int main()
+//{
+//	vector<int> v;
+//	combi(-1, v);
+//	return 0;
+//}
+//int n = 5;
+//int k = 3;
+//int a[5] = { 1, 2, 3, 4, 5 };
+//int main()
+//{
+//	for (int i = 0; i < n; ++i)
+//	{
+//		for (int j = i + 1; j < n; ++j)
+//		{
+//			for (int k = j + 1; k < n; ++k)
+//			{
+//
+//			}
+//		}
+//	}
+//}
+//int n = 5;
+//int k = 2;
+//int a[5] = { 1, 2, 3, 4, 5 };
+//int main()
+//{
+//	for (int i = 0; i < n; ++i)
+//	{
+//		for (int j = i + 1; j < n; ++j)
+//		{
+//			cout << i << " " << j << "\n";
+//		}
+//	}
+//}
+//int gcd(int a, int b)
+//{
+//	if (0 == a)
+//	{
+//		return b;
+//	}
+//
+//	return gcd(b % a, a);
+//}
+//
+int gcd(int a, int b)
+{
+	if (b == 0)
+	{
+		return 0;
+	}
+	return gcd(b % a, a);
+}
 
-int v[10];
+int lcm(int a, int b)
+{
+	return (a * b )/ gcd(a, b);
+}
+
 int main()
 {
-	unordered_map<string, int> umap;
-
-	umap.insert({ "test1", 1 });
-
-	umap.emplace("test5", 5 );
-
-	umap["test1"] = 4;
-
-	for (auto it : umap)
-	{
-		cout << it.first << "::" << it.second << "\n";
-	}
-
-	auto search = umap.find("test4");
-
-	if (search != umap.end())
-	{
-		cout << "found : " << search->first << " " << (*search).second << "\n";
-	}
-
-	else
-	{
-		cout << "not found.." << "\n";
-	}
-
-	umap["test1"]++;
-
-	cout << umap["test1"] << "\n";
-
-	cout << umap.size() << "\n";
-
-	umap.erase("test1");
-
-	cout << umap.size() << "\n";
-
+	int a = 10, b = 12;
+	cout << lcm(a, b) << "\n";
 	return 0;
-
-	
-
 }
