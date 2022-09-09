@@ -1569,23 +1569,89 @@ using namespace std;
 //	return gcd(b % a, a);
 //}
 //
-int gcd(int a, int b)
-{
-	if (b == 0)
-	{
-		return 0;
-	}
-	return gcd(b % a, a);
-}
-
-int lcm(int a, int b)
-{
-	return (a * b )/ gcd(a, b);
-}
-
+//int gcd(int a, int b)
+//{
+//	if (a == 0)
+//	{
+//		return b;
+//	}
+//	return gcd(b % a, a);
+//}
+//
+//int lcm(int a, int b)
+//{
+//	return (a * b )/ gcd(a, b);
+//}
+//
+//int main()
+//{
+//	int a = 10, b = 12;
+//	cout << lcm(a, b) << "\n";
+//	return 0;
+//}
+//int main()
+//{
+//	int che[100];
+//
+//	vector<int>v;
+//	for (int i = 2; i <= 100; ++i)
+//	{
+//		if (che[i] == 1)
+//		{
+//			continue;
+//		}
+//
+//		for (int j = i * 2; j <= 100; j += i)
+//		{
+//			che[j] = 1;
+//		}
+//	}
+//
+//	for (int i = 2; i <= 100; ++i)
+//	{
+//		if (che[i] != 1)
+//			v.push_back(i);
+//	}
+//	for (int element : v)
+//	{
+//		cout << element << " ";
+//	}
+//	
+//}
+//bool check(int a)
+//{
+//	if (a <= 1)
+//	{
+//		return 0;
+//	}
+//
+//	if (a == 2)
+//	{
+//		return 1;
+//	}
+//	for (int i = 2; i * i <= a; ++i)
+//	{
+//		if (a % i == 0)
+//		{
+//			return 0;
+//		}
+//		
+//	}
+//	return 1;
+//}
+//
+//int main()
+//{
+//	int na = 20;
+//	for (int i = 0; i <= na; ++i)
+//	{
+//		if (check(i))
+//		{
+//			cout << i << "는 소수입니다\n";
+//		}
+//	}
+//}
 int main()
 {
-	int a = 10, b = 12;
-	cout << lcm(a, b) << "\n";
-	return 0;
+	int n = 4
 }
