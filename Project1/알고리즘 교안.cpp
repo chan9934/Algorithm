@@ -10,6 +10,7 @@
 #include <set>
 #include <stack>
 #include<queue>
+#include<numeric>
 
 using namespace std;
 //int ret = 1;
@@ -1651,7 +1652,237 @@ using namespace std;
 //		}
 //	}
 //}
-int main()
-{
-	int n = 4
-}
+//int main()
+//{
+//	int n = 4;
+//	int pow_2 = (int)pow(2, n);
+//	cout << pow_2 << "\n";
+//	return 0;
+//}
+//int main()
+//{
+//	int n = 16;
+//	int ret = (int)sqrt(n);
+//	cout << ret << "\n";
+//	return 0;
+//}
+//int main()
+//{
+//	vector<int> v;
+//	int a[5] = { 1, 2, 2, 2, 3 };
+//	for (int i = 0; i < 5; ++i)
+//	{
+//		v.push_back(a[i]);
+//	}
+//	int x = 2;
+//	int c = (int)(upper_bound(v.begin(), v.end(), x) - lower_bound(v.begin(), v.end(), x));
+//	int f = (int)(lower_bound(v.begin(), v.end(), x) - v.begin());
+//	int t = (int)(upper_bound(v.begin(), v.end(), x) - v.begin());
+//	int f2 = *lower_bound(v.begin(), v.end(), x);
+//	int t2 = *upper_bound(v.begin(), v.end(), x);
+//	cout << x << "의 갯수 : " << c << "시작되는 점 : " << f << " 끝나는 점 : " << t << "\n";
+//	cout << "lower bound가 시작되는 점의 값 : " << f2 << " upper bound가 시작되는 점의 값 : " << t2 << "\n";
+//
+//	c = (int)(upper_bound(a, a + 5, x)) - (int)lower_bound(a, a + 5, x);
+//	f = (int)(lower_bound(a, a + 5, x) - a);
+//	t = (int)(upper_bound(a, a + 5, x) - a);
+//	f2 = *lower_bound(a, a + 5, x);
+//	t2 = *upper_bound(a, a + 5, x);
+//	cout << x << "의 갯수 : " << c << ",시작되는 점 : " << f << "끝나는 점 : " << t << "\n";
+//	printf("lower bound가 시작되는 점의 값 : %d, upper bound가 시작되는 점의 값 : %d\n", f2, t2);
+//
+//	return 0;
+//
+//}
+//typedef long long ll;
+//int main()
+//{
+//	vector<int> a;
+//	for (int i = 1; i <= 3; ++i)
+//	{
+//		a.push_back(i);
+//	}
+//
+//	for (int i = 5; i <= 10; ++i)
+//	{
+//		a.push_back(i);
+//	}
+//
+//	cout << lower_bound(a.begin(), a.end(), 4) - a.begin() << "\n";
+//}
+//vector<int> v;
+//int main()
+//{
+//	for (int i = 2; i <= 5; ++i)
+//	{
+//		v.push_back(i);
+//	}
+//	
+//	v.push_back(7);
+//	cout << upper_bound(v.begin(), v.end(), 6) - v.begin() << "\n";
+//	cout << lower_bound(v.begin(), v.end(), 6) - v.begin() << "\n";
+//	cout << upper_bound(v.begin(), v.end(), 9) - v.begin() << "\n";
+//	cout << lower_bound(v.begin(), v.end(), 9) - v.begin() << "\n";
+//	cout << upper_bound(v.begin(), v.end(), 0) - v.begin() << "\n";
+//	cout << lower_bound(v.begin(), v.end(), 0) - v.begin() << "\n";
+//
+//}
+//vector<int> v;
+//int main()
+//{
+//	for (int i = 1; i < 10; ++i)
+//	{
+//		v.push_back(i);
+//	}
+//
+//	rotate(v.begin(), v.end() - 1, v.end());
+//	for (vector<int>::iterator it = v.begin(); it != v.end(); ++it)
+//	{
+//		cout << ' ' << *it;
+//	}
+//	cout << "\n";
+//}
+//int main()
+//{
+//	vector<int> v = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+//	int sum = accumulate(v.begin(), v.end(), 0);
+//	cout << sum << "\n";
+//}
+//int main()
+//{
+//	vector<int> v = { 1, 2, 3, 4, 5, 6, 7, 8, 10 };
+//	int a = *min_element(v.begin(), v.end());
+//	cout << a << "\n";
+//}
+//vector<int> v;
+//int main()
+//{
+//	for (int i = 1; i <= 6; ++i)
+//	{
+//		v.push_back(i);
+//	}
+//	int i = 1;
+//	int temp = v[i];
+//	v[i] = v[i + 1];
+//	v[i + 1] = v[i + 2];
+//	v[i + 2] = v[i + 3];
+//	v[i + 3] = temp;
+//	for (int i : v)
+//	{
+//		cout << i << "\n";
+//	}
+//}
+//void b(int a)
+//{
+//	a = 2;
+//}
+//
+//void b2(int& a)
+//{
+//	a = 2;
+//}
+//
+//void b3(int* a)
+//{
+//	*a = 3;
+//}
+//int main()
+//{
+//	int a = 1;
+//	b(a);
+//	cout << a;
+//	b2(a);
+//	cout << a;
+//	b3(&a);
+//	cout << a;
+//	return 0;
+//}
+//vector<int> v;
+//int main()
+//{
+//	int n = 500;
+//	int b = 16;
+//	while (n > 1)
+//	{
+//		v.push_back(n % b);
+//		n /= b;
+//	}
+//	if (n == 1)
+//	{
+//		v.push_back(1);
+//	}
+//	reverse(v.begin(), v.end());
+//	for (int a : v)
+//	{
+//		if (a >= 10)
+//		{
+//			cout << char(a + 55);
+//		}
+//		else cout << a;
+//	}
+//}
+//vector<int> v;
+//int main()
+//{
+//	for (int i = 1; i <= 6; ++i)
+//	{
+//		v.push_back(i);
+//	}
+//
+//	sort(v.begin(), v.end(), greater<int>());
+//	for (int i : v)
+//	{
+//		cout << i << " ";
+//	}
+//}
+//vector<pair<int, int>> v;
+//int main()
+//{
+//	for (int i = 1; i <= 6; ++i)
+//	{
+//		v.push_back({ i, i });
+//	}
+//	sort(v.begin(), v.end(), greater<pair<int, int>>());
+//	for (auto i : v)
+//	{
+//		cout << i.first << " ";
+//	}
+//}
+//vector<int> v;
+//bool cmp(int a, int b)
+//{
+//	return a > b;
+//}
+//
+//int main()
+//{
+//	for (int i = 1; i <= 6; ++i)
+//	{
+//		v.push_back(i);
+//	}
+//	sort(v.begin(), v.end(), cmp);
+//	for (int i : v)
+//	{
+//		cout << i << " ";
+//	}
+//	cout << "\n";
+//}
+//void b(int a[][5])
+//{
+//	a[0][4] = 44;
+//}
+//
+//int main()
+//{
+//	int a[3][5]
+//		=
+//	{
+//		{1, 2, 3, 4, 5},
+//		{6, 7, 8, 9, 10},
+//		{11, 12, 13, 14 ,15}
+//	};
+//	b(a);
+//	cout << a[0][4] << "\n";
+//	return 0;
+//
+//}

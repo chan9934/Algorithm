@@ -36,5 +36,16 @@
     <ClCompile Include="1주차. 복잡도, 재귀함수, 누적합, 구현.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="1_A 일곱난쟁이.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="1_B 알파벳 갯수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Include.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
