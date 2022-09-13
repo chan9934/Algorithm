@@ -42,6 +42,18 @@
     <ClCompile Include="1_B 알파벳 갯수.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="트럭주차.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트램펄린인지 확인하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="농구 경기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ROT13.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h">
