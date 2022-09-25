@@ -184,7 +184,10 @@
     <ClCompile Include="트램펄린인지 확인하기.cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>
-    <ClCompile Include="패션왕 신해빈.cpp" />
+    <ClCompile Include="패션왕 신해빈.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
+    </ClCompile>
+    <ClCompile Include="팰린드롬 만들기.cpp" />
     <ClCompile Include="한국이 그리울 땐 서버에 접속하지 .cpp">
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">true</ExcludedFromBuild>
     </ClCompile>

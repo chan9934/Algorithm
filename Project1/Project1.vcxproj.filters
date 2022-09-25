@@ -66,6 +66,9 @@
     <ClCompile Include="패션왕 신해빈.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="팰린드롬 만들기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h">
