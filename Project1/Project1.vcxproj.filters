@@ -69,6 +69,15 @@
     <ClCompile Include="팰린드롬 만들기.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="주몽.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="좋은단어.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="곱셈.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h">
