@@ -2,21 +2,21 @@
 
 using namespace std;
 
+int X, Y, Z;
 
-long long X, Y, Z, D, Ret;
-
-int i = 0;
+int D = 1;
 
 int main()
 {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
 	cin >> X >> Y >> Z;
 
-	D = X % Z;
-
-	while (D * (long long)(pow(X, i) <= Z))
+	for (int i = 0; i < Y; ++i)
 	{
-		++i;
+		D = (D * X)% Z;
 	}
-
-	Ret = D * (long long)(pow(X, i%4));
+	cout << D;
 }
