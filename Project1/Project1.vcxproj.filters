@@ -84,6 +84,12 @@
     <ClCompile Include="2주차.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="미로찾기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="유기농 배추.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h">
