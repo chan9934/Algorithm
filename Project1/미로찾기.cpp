@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int Map[104][104], Visit[104][104], x, y,  Nx, Ny, XNum, YNum;
+int MMAP[104][104], Visit[104][104], x, y,  Nx, Ny, XNum, YNum;
 int Dy[4] = { -1, 0, 1, 0 };
 int Dx[4] = { 0, 1, 0, -1 };
 
@@ -14,7 +14,7 @@ int main()
 	{
 		for (int j = 1; j <= XNum; ++j)
 		{
-			scanf_s("%1d", &Map[i][j]);
+			scanf_s("%1d", &MMAP[i][j]);
 		}
 	}
 
@@ -32,7 +32,7 @@ int main()
 			Ny = y + Dy[i];
 			Nx = x + Dx[i];
 
-			if (Ny < 1 || Nx < 1 || Nx >XNum || Ny > YNum || (Map[Ny][Nx] == 0))continue;
+			if (Ny < 1 || Nx < 1 || Nx >XNum || Ny > YNum || (MMAP[Ny][Nx] == 0))continue;
 			if (Visit[Ny][Nx] != 0)continue;
 			Visit[Ny][Nx] = Visit[y][x] + 1;
 			q.push({ Ny, Nx });

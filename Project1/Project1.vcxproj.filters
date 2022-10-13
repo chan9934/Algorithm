@@ -90,6 +90,15 @@
     <ClCompile Include="유기농 배추.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="안전 영역.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="영역구하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="쿼드트리.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h">
