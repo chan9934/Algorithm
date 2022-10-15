@@ -2,57 +2,65 @@
 
 using namespace std;
 
-int n;
-string s;
-char Map[70][70];
+int N;
+char Map[64][64];
+
+char S;
+
+string C;
 
 
 
-
-
-string Go(int y, int x, int n)
+string go(int y, int x, int Z)
 {
-	if (n == 1)
+	if (Z == 1)
 	{
 		return string(1, Map[y][x]);
 	}
-	int Dy[4] = { 0, 0, +n / 2, +n / 2 };
-	int Dx[4] = { 0, +n / 2, +n / 2, 0 };
-
-	char b = Map[y][x];
-	string ret =  "";
-	for (int i = 0; i < 4; ++i)
+	S = Map[y][x];
+	string Ret = "";
+	for (int i = y; i < y + Z; ++i)
 	{
-		if (b != Map[y + Dy[i]][x + Dx[i]])
+		for (int j = x; j < x + Z; ++j)
 		{
-			ret += '(';
-			ret += Go(y, x, n / 2);
-			ret += Go(y, x + n/2, n / 2);
-			ret += Go(y + n / 2, x, n / 2);
-			ret += Go(y + n / 2, x + n / 2, n / 2);
-			ret += ')';
-		
-			return ret;
+			if (S != Map[i][j])
+			{
+				Ret += '(';
+
+				Ret += go(y, x, Z / 2);
+				Ret += go(y, x + Z / 2, Z / 2);
+				Ret += go(y + Z / 2, x, Z / 2);
+
+				
+
+				Ret += go(y + Z / 2, x + Z / 2, Z / 2);
+
+				Ret += ')';
+
+				return Ret;
+			}
+
 		}
 	}
-	
+
 	return string(1, Map[y][x]);
-
-
+	
 }
 
 int main()
 {
-	cin >> n;
-	for (int i = 0; i < n; ++i)
+
+	cin >> N;
+
+	for (int i = 0; i < N; ++i)
 	{
-		cin >> s;
-		for (int j = 0; j < n; ++j)
+
+		cin >> C;
+		for (int j = 0; j < N; ++j)
 		{
-			
-			Map[i][j] = s[j];
+			Map[i][j] = C[j];
 		}
 	}
 
-	cout << Go(0, 0, n);
+	cout << go(0, 0, N);
 }

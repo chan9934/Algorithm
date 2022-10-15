@@ -99,6 +99,9 @@
     <ClCompile Include="쿼드트리.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="사과 담기 게임.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h">
