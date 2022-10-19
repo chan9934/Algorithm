@@ -102,6 +102,24 @@
     <ClCompile Include="사과 담기 게임.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="빈도 정렬.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="비밀번호 발음하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="수학숙제.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="기상캐스터 .cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NBA 농구.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="교수가 된 현우cpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Include.h">
