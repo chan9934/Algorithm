@@ -129,5 +129,17 @@
     <ClCompile Include="균형잡힌 세상.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="연구소.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="치즈.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="트리.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="효율적인 해킹.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
