@@ -141,5 +141,23 @@
     <ClCompile Include="효율적인 해킹.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="오큰수.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="컴백홈.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="치킨배달.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="보물섬.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="인구 이동.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="불!.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
