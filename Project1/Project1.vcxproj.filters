@@ -159,5 +159,14 @@
     <ClCompile Include="불!.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="FireTest.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="뮤탈리스크.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="괄호 추가하기.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
