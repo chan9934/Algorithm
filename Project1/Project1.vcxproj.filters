@@ -168,5 +168,11 @@
     <ClCompile Include="괄호 추가하기.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="숨바꼭질2.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="숨바꼭질4.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

@@ -1,45 +1,65 @@
 #include <bits/stdc++.h>
+
 using namespace std;
 
-vector<int> num;
-vector<char> oper_str;
-int n, ret = -987654321;
-string s;
-void fastIO() {
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-}
-int oper(char a, int b, int c) {
-    if (a == '+') return b + c;
-    if (a == '-') return b - c;
-    if (a == '*') return b * c;
+int N;
+string S;
+vector<char> Operator;
+vector<int> Number;
+int Result = -90000;
+
+int Oper(char a, int x, int y)
+{
+	if (a == '+')
+	{
+		return x + y;
+	}
+	else if (a == '-')
+	{
+		return x - y;
+	}
+	else if (a == '*')
+	{
+		return x * y;
+	}
 }
 
-void go(int here, int _num) {
-    cout << here << ":" << _num << "\n";
-    if (here == num.size() - 1)
-    {
-        ret = max(ret, _num);
-        return;
-    }
-    go(here + 1, oper(oper_str[here], _num, num[here + 1]));
-    if (here + 2 <= num.size() - 1)
-    {
-        int temp = oper(oper_str[here + 1], num[here + 1], num[here + 2]);
-        go(here + 2, oper(oper_str[here], _num, temp));
-    }
-    return;
+void Go(int Index, int Ret)
+{
+	if (Index + 1 == Number.size())
+	{
+		Result = max(Result, Ret);
+		return;
+	}
+
+	Go(Index + 1, Oper(Operator[Index], Ret, Number[Index + 1]));
+
+	if (Index + 3 <= Number.size())
+	{
+		int Temp = Oper(Operator[Index + 1], Number[Index + 1], Number[Index + 2]);
+		Go(Index + 2, Oper(Operator[Index], Ret, Temp));
+	}
+	return;
+
 }
-int main() {
-    fastIO();
-    cin >> n;
-    cin >> s;
-    for (int i = 0; i < n; i++) {
-        if (i % 2 == 0)num.push_back(s[i] - '0');
-        else oper_str.push_back(s[i]);
-    }
-    go(0, num[0]);
-    cout << ret << "\n";
-    return 0;
+
+int main()
+{
+	cin >> N;
+	cin >> S;
+	for (int i = 0; i < N; ++i)
+	{
+		if (i & 1)
+		{
+			Operator.push_back(S[i]);
+		}
+		else
+		{
+			Number.push_back(S[i] - '0');
+		}
+	}
+	Go(0, Number[0]);
+	cout << Result;
+
+	return 0;
 }
