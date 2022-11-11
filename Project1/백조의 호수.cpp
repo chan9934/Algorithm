@@ -1,25 +1,89 @@
 #include<bits/stdc++.h>
-#define y1 sadf
 
 using namespace std;
 
-char Map[1504][1504];
-int Visited[1504][1504];
-
 int R, C;
-queue<pair<int, int>>P1;
-
-queue<pair<int, int>>P2;
-int Ny, Nx;
-
+int y, x;
+char Map[1504][1504];
+int SwanVisited[1504][1504];
+int WaterVisited[1504][1504];
+queue<pair<int, int>>WaterQ;
+queue<pair<int, int>>WaterTempQ;
+queue<pair<int, int>>SwanQ;
+queue<pair<int, int>>SwanTempQ;
 int Dy[4] = { -1, 0, 1, 0 };
 int Dx[4] = { 0, 1, 0, -1 };
-int y, x;
-int x1, y1, x2, y2;
+int Ny, Nx;
+int Day;
+
+bool SwanMove(queue<pair<int, int>> Q)
+{
+	while (Q.size())
+	{
+		
+		tie(y, x) = Q.front();
+		Q.pop();
+		for (int i = 0; i < 4; ++i)
+		{
+			Ny = Dy[i] + y;
+			Nx = Dx[i] + x;
+			if (Ny < 0 || Nx < 0 || Ny >= R || Nx >= C || SwanVisited[Ny][Nx] == 1) continue;
+			SwanVisited[Ny][Nx] = 1;
+			if (Map[Ny][Nx] == 'L')
+			{
+				return true;
+			}
+			else if (Map[Ny][Nx] == '.')
+			{
+				
+				Q.push({ Ny, Nx });
+			}
+			else if (Map[Ny][Nx] == 'X')
+			{
+				SwanTempQ.push({ Ny, Nx });
+			
+			}
+		}
+	}
+	return false;
+
+}
+void WaterMove(queue<pair<int, int>> Q)
+{
+	while (Q.size())
+	{
+
+		tie(y, x) = Q.front();
+		Q.pop();
+		for (int i = 0; i < 4; ++i)
+		{
+			Ny = Dy[i] + y;
+			Nx = Dx[i] + x;
+			if (Ny < 0 || Nx < 0 || Ny >= R || Nx >= C || WaterVisited[Ny][Nx] == 1) continue;
+			if (Map[Ny][Nx] == 'X')
+			{
+				Map[Ny][Nx] = '.';
+				WaterTempQ.push({ Ny, Nx });
+				WaterVisited[Ny][Nx] = 1;
+			}
+		}
+	}
+}
+
+void QClear(queue<pair<int, int>>&Q)
+{
+	queue<pair<int, int>>TempQ;
+	swap(Q, TempQ);
+}
+
+
 int main()
 {
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
 	cin >> R >> C;
-	int Cnt = 0;
+
 	for (int i = 0; i < R; ++i)
 	{
 		for (int j = 0; j < C; ++j)
@@ -27,81 +91,34 @@ int main()
 			cin >> Map[i][j];
 			if (Map[i][j] == '.')
 			{
-				P1.push({ i, j });
+				WaterVisited[i][j] = 1;
+				WaterQ.push({ i, j });
 			}
-			else if (Map[i][j] == 'L')
+			else if (Map[i][j] == 'L' && Day == 0)
 			{
-				if (Cnt == 0)
-				{
-					Map[i][j] = 1;
-					++Cnt;
-				}
-				else
-				{
-					Map[i][j] = 2;
-				}
-					
+				SwanQ.push({ i, j });
+				WaterQ.push({ i, j });
+				WaterVisited[i][j] = 1;
+				SwanVisited[i][j] = 1;
+				++Day;
+			}
+			else if (Map[i][j] == 'L' && Day == 1)
+			{
+				WaterQ.push({ i, j });
+				WaterVisited[i][j] = 1;
 			}
 		}
 	}
-	int turn = 0;
-	bool bL1 = false;
-	bool bL2 = false;
-
-	
 	while (1)
 	{
-		queue<pair<int, int>>P1Temp;
-		++turn;
-		while (P1.size())
-		{
-			tie(y, x) = P1.front();
-
-			P1.pop();
-			for (int i = 0; i < 4; ++i)
-			{
-				Ny = y + Dy[i];
-				Nx = x + Dx[i];
-
-				if (Ny < 0 || Nx < 0 || Ny >= R || Nx >= C || Visited[Ny][Nx] == 1)continue;
-				if (Map[Ny][Nx] == '.')
-				{
-					Visited[Ny][Nx] = 1;
-					P1.push({ Ny, Nx });
-				}
-				else if(Map[Ny][Nx] == 'X')
-				{
-					Visited[Ny][Nx] = 1;
-					P1Temp.push({ Ny, Nx });
-				}
-
-				else if (Map[Ny][Nx] == 1)
-				{
-					Visited[Ny][Nx] = 1;
-					P1.push({ Ny, Nx });
-					bL1 = true;
-					if (bL1 && bL2)
-					{
-						cout << turn;
-						return 0;
-					}
-				}
-				else if (Map[Ny][Nx] == 2)
-				{
-					Visited[Ny][Nx] = 1;
-					P1.push({ Ny, Nx });
-					bL2 = true;
-					if (bL1 && bL2)
-					{
-						cout << turn;
-						return 0;
-					}
-				}
-			}
-
-		}
-		P1 = P1Temp;
+		if (SwanMove(SwanQ)) break;
+		WaterMove(WaterQ);
+		WaterQ = WaterTempQ;
+		SwanQ = SwanTempQ;
+		QClear(WaterTempQ);
+		QClear(SwanTempQ);
+		
+		++Day;
 	}
-	
-
+	cout << Day-1;
 }

@@ -186,5 +186,8 @@
     <ClCompile Include="Go.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="알파벳.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
