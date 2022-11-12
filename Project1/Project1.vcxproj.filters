@@ -189,5 +189,8 @@
     <ClCompile Include="알파벳.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="부등호.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
