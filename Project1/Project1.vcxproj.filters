@@ -192,5 +192,8 @@
     <ClCompile Include="부등호.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="완전이진트리.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
