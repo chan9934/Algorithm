@@ -11,26 +11,49 @@
 //baekjoon
 //예제 출력 1
 //1 1 0 0 1 0 0 0 0 1 1 0 0 1 2 0 0 0 0 0 0 0 0 0 0 0
-#include <bits/stdc++.h>
+//#include <bits/stdc++.h>
+//using namespace std;
+//
+//string Input;
+//int Output[26];
+//
+//
+//int main()
+//{
+//	ios_base::sync_with_stdio(false);
+//	cin.tie(NULL);
+//	cout.tie(NULL);
+//	cin >> Input;
+//	for (char it : Input)
+//	{
+//		++Output[(int)(it - 'a')];
+//	}
+//
+//	for (int it : Output)
+//	{
+//		cout << it << " ";
+//	}
+//}
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
 
-string Input;
-int Output[26];
-
+string s;
+int c[26];
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-	cin >> Input;
-	for (char it : Input)
+	cin >> s;
+
+	for (int i = 0; i < s.size(); ++i)
 	{
-		++Output[(int)(it - 'a')];
+		++c[s[i] - 'a'];
 	}
 
-	for (int it : Output)
+	for (int i = 0; i < 26; ++i)
 	{
-		cout << it << " ";
+		cout << c[i] << " ";
 	}
+
 }
