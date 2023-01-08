@@ -93,41 +93,96 @@
 //	cout << Sum;
 //	
 //}
-#include "bits/stdc++.h"
+//#include "bits/stdc++.h"
+//using namespace std;
+//
+//int A, B, C, a, b, T[104], ret;
+//
+//int main()
+//{
+//	cin >> A >> B >> C;
+//	for (int i = 0; i < 3; ++i)
+//	{
+//		cin >> a >> b;
+//		for (int j = a; j < b; ++j)
+//		{
+//			++T[j];
+//		}
+//	}
+//
+//	for (int i : T)
+//	{
+//		if (i)
+//		{
+//			if (3 == i)
+//			{
+//				ret += 3 * C;
+//			}
+//			if (2 == i)
+//			{
+//				ret += 2 * B;
+//			}
+//			if (1 == i)
+//			{
+//				ret += 1 * A;
+//			}
+//		}
+//	}
+//	cout << ret;
+//	return 0;
+//}
+#include <iostream>
+#include <algorithm>
+
 using namespace std;
 
-int A, B, C, a, b, T[104], ret;
+int A[104];
+
+int Q, W, E;
+
+int x, y;
+
+int Sum;
 
 int main()
 {
-	cin >> A >> B >> C;
+	cin >> Q >> W >> E;
+
 	for (int i = 0; i < 3; ++i)
 	{
-		cin >> a >> b;
-		for (int j = a; j < b; ++j)
+		cin >> x >> y;
+
+		for (int j = x + 1; j <= y; ++j)
 		{
-			++T[j];
+			++A[j];
 		}
+
 	}
 
-	for (int i : T)
+	for (int a : A)
 	{
-		if (i)
+		if (a == 0)
 		{
-			if (3 == i)
-			{
-				ret += 3 * C;
-			}
-			if (2 == i)
-			{
-				ret += 2 * B;
-			}
-			if (1 == i)
-			{
-				ret += 1 * A;
-			}
+			continue;
 		}
+		if (a == 1)
+		{
+			Sum += Q;
+		}
+
+		else if (a == 2)
+		{
+			
+			Sum += 2 * W;
+		}
+		else if (a == 3)
+		{
+			Sum += 3 * E;
+		}
+
 	}
-	cout << ret;
-	return 0;
+
+	cout << Sum;
+
+
 }
